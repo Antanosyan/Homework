@@ -1,3 +1,5 @@
+package Homework0409PrimitiveTypes;
+
 import java.util.Scanner;
 
 public class Task3 {
