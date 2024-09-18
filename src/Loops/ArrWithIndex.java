@@ -34,12 +34,5 @@ public class ArrWithIndex {
         for (int i = minIndex, j = 0; i <= maxIndex; i++, j++) {
             array2[j] = array1[i];
         }
-        for (int i = 0; i < array1.length; i++) {
-            System.out.print(array1[i] + " ");
-        }
-        System.out.println();
-        for (int i = 0; i < array2.length; i++) {
-            System.out.print(array2[i] + " ");
-        }
     }
 }
