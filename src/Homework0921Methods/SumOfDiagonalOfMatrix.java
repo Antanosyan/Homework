@@ -4,6 +4,7 @@ public class SumOfDiagonalOfMatrix {
     /*Ունեք nxn չափի մատրիցա, n-ը որոշեք դուք։ Պետքա գրել ծրագիր, որը կհաշվի
     մատրիցայի անկյունագծերի վրայի թվերի գումարը։*/
     public static void main(String[] args) {
+
         int[][] matrix = {
                 {1, 2, 3, 4, 5},
                 {6, -7, 8, 9, 10},
