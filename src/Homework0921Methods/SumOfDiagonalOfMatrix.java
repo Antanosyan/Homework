@@ -19,7 +19,7 @@ public class SumOfDiagonalOfMatrix {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (i == j) {
+                if (i == j || i + j == matrix.length) {
                     sum += matrix[i][j];
                 }
             }
