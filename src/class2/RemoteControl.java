@@ -1,23 +1,25 @@
 package class2;
 
 public class RemoteControl {
-    private SmartLight smartLight;
+    private SmartLight light;
 
-    public RemoteControl(SmartLight smartLight) {
-        this.smartLight = smartLight;
+    public RemoteControl(SmartLight light) {
+        this.light = light;
     }
 
-    public void resetLight() {
-        smartLight.setOn(false);
-        smartLight.setBrightness(50);
-        smartLight.setColor("white");
+    public void reserLight() {
+        light.setBrightness(50);
+        light.setON(false);
+        light.setColor("white");
     }
 
     public SmartLight getLightStatus() {
-        return smartLight;
+        return light;
     }
 
-    public void changeBrightness(int brightness) {
-        smartLight.setBrightness(brightness);
+    public void changeBrightness(int newBrightness) {
+        light.setBrightness(newBrightness);
     }
+
+
 }

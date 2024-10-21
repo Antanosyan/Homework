@@ -1,26 +1,22 @@
 package class2;
 
 public class SmartLight {
-    private boolean isOn = false;
-    private int brightness = 45;
-    private String color = "blue";
+    private boolean isON;
+    private int brightness;
+    private String color;
 
-    public SmartLight() {
-        this.isOn = isOn;
-        this.brightness = brightness;
+    public SmartLight(boolean isON, String color, int brightness) {
+        this.isON = isON;
         this.color = color;
+        this.brightness = brightness;
     }
 
-    public void toggle() {
-        isOn = !isOn;        // Return the new state (on/off)
+    public boolean isON() {
+        return isON;
     }
 
-    public boolean isOn() {
-        return isOn = !isOn;
-    }
-
-    public void setOn(boolean on) {
-        isOn = on;
+    public void setON(boolean ON) {
+        isON = ON;
     }
 
     public int getBrightness() {
@@ -31,7 +27,7 @@ public class SmartLight {
         if (brightness >= 0 && brightness <= 100) {
             this.brightness = brightness;
         } else {
-            System.out.println("Invalid brightness value. Must be between 0 and 100.");
+            System.out.println("invalid brightness");
         }
     }
 
@@ -41,5 +37,14 @@ public class SmartLight {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public void toggle() {
+        isON = !isON;
+        if (isON) {
+            System.out.println("light is turned on");
+        } else {
+            System.out.println("light is turned off");
+        }
     }
 }
