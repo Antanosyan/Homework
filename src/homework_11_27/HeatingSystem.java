@@ -5,21 +5,22 @@ public abstract class HeatingSystem {
     private double area; // Area in m²
     private Boiler boiler; // Boiler used in the system
     private double insulation; // Heat transfer coefficient (U) in W/m²·K
-    private final double OutDoorAvgMonthlyTemp = 11; // Average outdoor temperature
+    private static final double[] TEMPERATURES = {-12, -8, -5, 0, 5, 20, 25, 20, 15, 7, 5, -1}; // Average temperatures by month
     private double indoorTemp;
+    private int month;
 
-    public HeatingSystem(String houseType, double area, Boiler boiler, double insulation, double indoorTemp) {
+    public HeatingSystem(String houseType, double area, Boiler boiler, double insulation, double indoorTemp,int month) {
         this.houseType = houseType;
         this.area = area;
         this.boiler = boiler;
         this.insulation = insulation;
         this.indoorTemp = indoorTemp;
-
+        this.month = month;
     }
 
     public double calculateEnergy() {
         // Formula: Q = U * A * (T_indoor - T_outdoor) / 1000
-        return insulation * area * (indoorTemp - OutDoorAvgMonthlyTemp) / 1000.0;
+        return insulation * area * (indoorTemp - TEMPERATURES[month - 1]) / 1000.0;
     }
 
     public double calculateConsumption() {
