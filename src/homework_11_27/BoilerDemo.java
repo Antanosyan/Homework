@@ -17,6 +17,7 @@ public class BoilerDemo {
                 privateHouseSystem2
         };
         for (HeatingSystem heatingSystem : heatingSystems) {
+            heatingSystem.month();
             System.out.println(heatingSystem.showInfo());
             System.out.println(heatingSystem.getBoiler() instanceof GasBoiler ?
                     "Gas consumption: " + heatingSystem.calculateConsumption() :
