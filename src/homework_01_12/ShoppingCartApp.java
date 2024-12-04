@@ -6,7 +6,7 @@ public class ShoppingCartApp {
         Gift phone = new Phone("Phone", 80000, 123);
         Gift hairDryer = new HairDryer("Hair Dryer", 50, 124);
 
-        Card card = new Card(500000);
+        Card card = new Card(100000);
         card.displayCardInfo();
 
         Item laptop = new Item("Laptop", 900, phone, 1);
@@ -24,9 +24,12 @@ public class ShoppingCartApp {
         basket.addItem(tv);
         basket.removeGiftById(1);
         System.out.println(basket);
-        basket.checkout(card);
+        try {
+            basket.checkout(card);
+        } catch (MoreThanOneItemException e) {
+            throw new RuntimeException("Remove one gift");
+        }
         card.displayCardInfo();
         System.out.println(basket);
-
     }
 }

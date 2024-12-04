@@ -71,11 +71,11 @@ public class Basket {
         System.out.println("Basket cleared.");
     }
 
-    public void checkout(Card card) {
+    public void checkout(Card card) throws MoreThanOneItemException {
+        if (giftCount() > 1) {
+            throw new MoreThanOneItemException();
+        }
         try {
-            if (giftCount() > 1) {
-                throw new RuntimeException("More than one gift selected! Please remove one.");
-            }
             validateCard(card.getBalance());
             if (!card.deduct(calculateTotalPrice())) {
                 throw new RuntimeException("Insufficient funds on the card!");
