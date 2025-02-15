@@ -61,12 +61,6 @@ public class StudentDemo {
         System.out.println(sortedByName);
         System.out.println();
 
-        System.out.println("Students grade<60");
-        increaseGradeStudents
-                .stream()
-                .filter(student -> student.getGrade() < 61)
-                .forEach(System.out::println);
-        System.out.println();
 
         Map<String, List<Student>> groupedByGrade = increaseGradeStudents
                 .stream()
