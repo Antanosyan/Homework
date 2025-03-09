@@ -6,13 +6,6 @@ import java.util.List;
 public class State {
 
     private String name;
-    private String capital;
-    private String isoCode;
-    private String anthem;
-    private String coatOfArms;
-    private String flag;
-    private int population;
-    private double area;
 
     public State(String name, String capital, String isoCode, String anthem,
                  String coatOfArms, String flag, int population, double area) {
